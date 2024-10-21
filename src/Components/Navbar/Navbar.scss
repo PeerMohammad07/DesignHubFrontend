@@ -1,0 +1,161 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 2rem;
+  background-color: white;
+  font-family: Arial, sans-serif;
+
+  img {
+    height: 50px;
+  }
+
+  .nav-elements {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    margin-right: 1rem;
+
+    li {
+      margin-right: 1.5rem;
+      font-weight: 600;
+      color: black;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+          color: #555;
+        }
+      }
+    }
+  }
+
+  .button-container {
+    display: flex;
+    align-items: center;  
+    gap: 1rem;
+
+    .button {
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      text-align: center;
+
+      &.login-button {
+        background-color: transparent;
+        color: black;
+
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+
+      &.get-started-button {
+        background-color: black;
+        color: white;
+
+        &:hover {
+          background-color: #333;
+        }
+      }
+
+      &.logout-button {
+        background-color: white; 
+        color: black; 
+        padding: 0.5rem 1rem; 
+  
+        &:hover {
+          background-color: #f0f0f0; 
+        }
+      }
+    }
+  }
+
+  .user-name {
+    font-size: 1.1rem; 
+    font-weight: 700; 
+    color: #483a3a; 
+    margin-right: 1rem; 
+  }
+
+  .menu-icon {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    .nav-elements {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: white;
+      padding: 1rem;
+
+      ul {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        li {
+          margin: 0.5rem 0;
+        }
+      }
+
+      .button-container {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+
+        .button {
+          width: 100%; 
+          margin-bottom: 0.3rem;
+
+          &.logout-button {
+            background-color: white; 
+            color: black; 
+            padding: 0.6rem;
+
+          }
+          &:hover {
+            background-color: #f0f0f0; 
+          }
+        }
+      }
+    }
+
+    .menu-icon {
+      display: block;
+    }
+
+    &.menu-open {
+      .nav-elements {
+        display: flex;
+      }
+    }
+
+    .user-name {
+      margin: 0; 
+      line-height: 50px; 
+    }
+  }
+}
